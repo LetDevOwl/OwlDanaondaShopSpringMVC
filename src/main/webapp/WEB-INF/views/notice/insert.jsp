@@ -5,22 +5,31 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>공지사항 작성</title>
+	<link rel="stylesheet" href="../resources/css/notice/insert.css">
 	</head>
 	<body>
 		<h1>공지사항 작성</h1>
-		<form action="/notice/insert.do" method="post">
+		<form action="/notice/insert.do" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>공지사항 작성</legend>
-				<ul>
-					<li>
-						<label>제목</label>
-						<input type="text" id="" name="noticeSubject">
-					</li>
-					<li>
-						<label>내용</label>
-						<textarea rows="30" cols="40" id="" name="noticeContent"></textarea>
-					</li>
-				</ul>
+					<ul>
+						<li>
+							<label>제목</label>
+							<input type="text" name="noticeSubject">
+						</li>
+						<li>
+							<label>작성자</label>
+							<input type="text" name="noticeWriter">
+						</li>
+						<li>
+							<label>내용</label>
+							<textarea rows="4" cols="50" name="noticeContent"></textarea>
+						</li>
+						<li>
+							<label>첨부파일</label>
+							<input type="file" name="uploadFile">
+						</li>
+					</ul>
 			</fieldset>
 			<div>
 				<input type="submit" value="작성">

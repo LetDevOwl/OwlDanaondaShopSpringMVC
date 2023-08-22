@@ -11,20 +11,20 @@ public class UserStoreLogic implements UserStore{
 
 	@Override
 	public int insertUser(SqlSession sqlSession, User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = sqlSession.insert("UserMapper.insertUser", user);
+		return result;
 	}
 
 	@Override
 	public int updateUser(SqlSession sqlSession, User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = sqlSession.update("UserMapper.updateUser", user);
+		return result;
 	}
 
 	@Override
 	public int deleteUser(SqlSession sqlSession, String userId) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = sqlSession.delete("UserMapper.deleteUser", userId);
+		return result;
 	}
 
 	@Override
@@ -35,8 +35,8 @@ public class UserStoreLogic implements UserStore{
 
 	@Override
 	public User selectOneById(SqlSession sqlSession, String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = sqlSession.selectOne("UserMapper.selectOneById", userId);
+		return user;
 	}
 
 }

@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>다나온다 숍</title>
-		<link rel="stylesheet" href="/resources/css/mainPage/mainPageCss.css" />
+		<link rel="stylesheet" href="../resources/css/mainPage/mainPageCss.css" />
 	</head>
 	<body>
 		<div class="container">

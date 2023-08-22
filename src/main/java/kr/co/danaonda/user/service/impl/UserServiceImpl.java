@@ -18,20 +18,20 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public int insertUser(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = uStore.insertUser(sqlSession, user);
+		return result;
 	}
 
 	@Override
 	public int updateUser(User user) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = uStore.updateUser(sqlSession, user);
+		return result;
 	}
 
 	@Override
 	public int deleteUser(String userId) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = uStore.deleteUser(sqlSession, userId);
+		return result;
 	}
 
 	@Override
@@ -42,8 +42,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User selectOneById(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = uStore.selectOneById(sqlSession, userId);
+		return user;
 	}
 
 }

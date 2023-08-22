@@ -27,7 +27,7 @@
 	            </div>
 	            <div class="notice_date">
 		            <label>작성일</label>
-					<span>${requestScope.notice.noticeDate }</span>
+					<span>${requestScope.notice.nCreateDate }</span>
 <!-- 	                <input type="text" id="user_pw" name="user_pw"/> -->
 	            </div>
 	            <div class="notice_writer">
