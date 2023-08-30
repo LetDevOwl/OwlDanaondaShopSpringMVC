@@ -10,6 +10,7 @@ public class Notice {
 	private Timestamp nCreateDate;
 	private Timestamp nUpdateDate;
 	private String noticeFilename;
+	private String noticeFileRename;
 	private String noticeFilepath;
 	private long noticeFilelength;
 	
@@ -70,6 +71,14 @@ public class Notice {
 	public void setNoticeFilename(String noticeFilename) {
 		this.noticeFilename = noticeFilename;
 	}
+	
+	public String getNoticeFileRename() {
+		return noticeFileRename;
+	}
+
+	public void setNoticeFileRename(String noticeFileRename) {
+		this.noticeFileRename = noticeFileRename;
+	}
 
 	public String getNoticeFilepath() {
 		return noticeFilepath;
@@ -91,8 +100,10 @@ public class Notice {
 	public String toString() {
 		return "Notice [noticeNo=" + noticeNo + ", noticeSubject=" + noticeSubject + ", noticeContent=" + noticeContent
 				+ ", noticeWriter=" + noticeWriter + ", nCreateDate=" + nCreateDate + ", nUpdateDate=" + nUpdateDate
-				+ ", noticeFilename=" + noticeFilename + ", noticeFilepath=" + noticeFilepath + ", noticeFilelength="
-				+ noticeFilelength + "]";
+				+ ", noticeFilename=" + noticeFilename + ", noticeFileRename=" + noticeFileRename + ", noticeFilepath="
+				+ noticeFilepath + ", noticeFilelength=" + noticeFilelength + "]";
 	}
+
+	
 
 }

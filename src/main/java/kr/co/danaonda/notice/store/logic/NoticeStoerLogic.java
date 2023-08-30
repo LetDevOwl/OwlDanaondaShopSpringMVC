@@ -21,6 +21,12 @@ public class NoticeStoerLogic implements NoticeStore{
 	}
 
 	@Override
+	public int updateNotice(SqlSession session, Notice notice) {
+		int result = session.update("NoticeMapper.updateNotice", notice);
+		return result;
+	}
+
+	@Override
 	public int deleteNotice(SqlSession session, int noticeNo) {
 		int result = session.delete("NoticeMapper.deleteNotice", noticeNo);
 		return result;
@@ -42,12 +48,6 @@ public class NoticeStoerLogic implements NoticeStore{
 	}
 
 	@Override
-	public int selectListCount(SqlSession session) {
-		int result = session.selectOne("NoticeMapper.selectListCount");
-		return result;
-	}
-	
-	@Override
 	public List<Notice> searchNoticesByKeyword(SqlSession session, PageInfo pInfo, Map<String, String> paramMap) {
 		int limit = pInfo.getRecordCountPage(); // 가져오는 행의 갯수
 		int offset = (pInfo.getCurrentPage()-1)*limit;
@@ -57,8 +57,20 @@ public class NoticeStoerLogic implements NoticeStore{
 	}
 
 	@Override
+	public int selectListCount(SqlSession session) {
+		int result = session.selectOne("NoticeMapper.selectListCount");
+		return result;
+	}
+
+	@Override
 	public int selectListCount(SqlSession session, Map<String, String> paramMap) {
 		int result = session.selectOne("NoticeMapper.selectListByKeywordCount", paramMap);
 		return result;
+	}
+
+	@Override
+	public Notice selectNoticeByNo(SqlSession session, Integer noticeNo) {
+		Notice noticeOne = session.selectOne("NoticeMapper.selectNoticeByNo", noticeNo);
+		return noticeOne;
 	}
 }

@@ -28,6 +28,12 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 
 	@Override
+	public int updateNotice(Notice notice) {
+		int result = nStore.updateNotice(session, notice);
+		return result;
+	}
+
+	@Override
 	public int deleteNotice(int noticeNo) {
 		int result = nStore.deleteNotice(session, noticeNo);
 		return result;
@@ -61,5 +67,11 @@ public class NoticeServiceImpl implements NoticeService {
 	public int getListCount(Map<String, String> paramMap) {
 		int result = nStore.selectListCount(session, paramMap);
 		return result;
+	}
+
+	@Override
+	public Notice selectNoticeByNo(Integer noticeNo) {
+		Notice noticeOne = nStore.selectNoticeByNo(session, noticeNo);
+		return noticeOne;
 	}
 }
